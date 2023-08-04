@@ -1,0 +1,24 @@
+<div class="container my-5">
+    <div class=""><button class="btn btn-dark btn-sm"  routerLink="tiendas-add" > <a class="nav-link" routerLink="/tienda-add">+Tienda</a></button></div>
+    <h1>Tiendas</h1>
+    <table class="table" *ngIf="tiendas && tiendas.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sucursal</th>
+            <th scope="col">Dirección</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tienda of tiendas">
+            <td>{{tienda.id}}</td>
+            <td>{{tienda.sucursal}}</td>
+            <td>{{tienda.direccion}}</td>
+            <td><button [routerLink]="['/tienda-edit',tienda.id]" class="btn btn-dark btn-sm">Editar</button></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<p *ngIf="!tiendas || tiendas.length <= 0"> No hay tiendas</p>

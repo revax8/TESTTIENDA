@@ -1,0 +1,6 @@
+.my-custom-size {
+    max-width: 20%; /* Cambia el valor según lo que necesites */
+    height: auto;
+    margin: 0 auto; /* Para centrar la imagen horizontalmente */
+  }
+  
