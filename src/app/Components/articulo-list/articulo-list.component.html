@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <div class=""><button class="btn btn-dark btn-sm" > <a class="nav-link" routerLink="/articulo-add">+Articulo</a></button></div>
+    <h1>Articulos</h1>
+    <table class="table" *ngIf="articulos && articulos.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <!-- <th scope="col">Imagen</th> -->
+            <th scope="col">Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let articulo of articulos">
+            <td>{{articulo.id}}</td>
+            <td>{{articulo.codigo}}</td>
+            <td>{{articulo.descripcion}}</td>
+            <td>{{articulo.precio}}</td>
+            <td>{{articulo.stock}}</td>
+            <td><button [routerLink]="['/articulo-edit',articulo.id]" class="btn btn-dark btn-sm">Editar</button></td>
+            <td><button [routerLink]="['/articulo-tienda',articulo.id]" class="btn btn-dark btn-sm">+Tienda</button></td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<p *ngIf="!articulos || articulos.length <= 0"> No hay Articulos</p>

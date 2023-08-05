@@ -10,9 +10,10 @@ export interface Tienda {
     idArticulo: number;
     idTienda: number;
     fecha: Date;
-    idArticuloNavigation: Articulo;
-    idTiendaNavigation: Tienda;
+    //  idArticuloNavigation: Articulo;
+    //  idTiendaNavigation: Tienda;
   }
+
 
   export interface Articulo {
     id: number;
@@ -24,14 +25,14 @@ export interface Tienda {
     articuloTienda: ArticuloTiendum[];
     clienteArticulos: ClienteArticulo[];
   }
-  export interface ArticuloTiendum {
-    id: number;
-    idArticulo: number;
-    idTienda: number;
-    fecha: Date;
-    idArticuloNavigation: Articulo;
-    idTiendaNavigation: Tienda;
-  }
+  // export interface ArticuloTiendum {
+  //   id: number;
+  //   idArticulo: number;
+  //   idTienda: number;
+  //   fecha: Date;
+  //   idArticuloNavigation: Articulo;
+  //   idTiendaNavigation: Tienda;
+  // }
   export interface ClienteArticulo {
     idCliente: number;
     idArticulo: number;
@@ -47,7 +48,15 @@ export interface Tienda {
     clienteArticulos: ClienteArticulo[];
   }
   
-
+  // export interface ArticuloTiendum {
+  //   Id: number;
+  //   IdArticulo: number;
+  //   IdTienda: number;
+  //   Fecha: Date;
+  //   IdArticuloNavigation: Articulo;
+  //   IdTiendaNavigation: Tienda;
+  // }
+  
   
   
   

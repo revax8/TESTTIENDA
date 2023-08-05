@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <h1 class="mb-3"> Editar Articulo</h1>
+    
+    <div class="row">
+     <div class="col-6">
+        <form #form = "ngForm" (ngSubmit)="editArticulo()">
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input type="text" class="form-control" id="Id" name="id" [(ngModel)]="articuloEdit.id"  readonly>
+            </div>
+            <div class="mb-3">
+                <label for="codigo" class="form-label">Codigo</label>
+                <input type="text" class="form-control" id="codigo" name="codigo" [(ngModel)]="articuloEdit.codigo" >
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion"  [(ngModel)]="articuloEdit.descripcion">
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio</label>
+                <input type="text" class="form-control" id="precio" name="precio"  [(ngModel)]="articuloEdit.precio">
+            </div>
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="text" class="form-control" id="stock" name="stock"  [(ngModel)]="articuloEdit.stock">
+            </div>
+            <button type="submit" class="btn btn-dark mr-5">Guardar</button>
+            <button type="button" class="btn btn-danger" (click)="deleteTienda()">Eliminar</button>
+        </form>
+     </div>
+    </div>
+    </div>
