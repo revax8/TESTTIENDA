@@ -13,7 +13,7 @@ export class TiendasListComponent  implements OnInit{
   ngOnInit(): void {
     this.tiendaService.getAll().subscribe({
       next: (tiendas) =>{
-        console.log(tiendas);
+        // console.log(tiendas);
         this.tiendas = tiendas;
       },
       error: (error) => {

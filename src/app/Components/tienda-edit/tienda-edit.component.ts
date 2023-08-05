@@ -35,7 +35,7 @@ constructor(private activatedRoute : ActivatedRoute, private tiendaService: Tien
   editTienda(){
     this.tiendaService.update(this.tiendaEdit.id,this.tiendaEdit).subscribe({
       next: (response) =>{
-        console.log(response);
+        // console.log(response);
         this.router.navigate(['tiendas-list']);
       }
     })

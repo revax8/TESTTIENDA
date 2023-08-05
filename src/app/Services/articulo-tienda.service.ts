@@ -15,9 +15,8 @@ export class ArticuloTiendaService {
     return  this.http.get<ArticuloTiendum[]>(this.url+ "ArticuloTienda/GetAll");
   }
   add(nuevaTienda: ArticuloTiendum):Observable<ArticuloTiendum>{
-    console.log('si entro add ');
-    console.log(nuevaTienda);
-
+   console.log('nuevatienda', nuevaTienda);
+   console.log(this.url+"ArticuloTienda/Add");
     return this.http.post<ArticuloTiendum>(this.url+"ArticuloTienda/Add",nuevaTienda);
   }
   getId(id: string): Observable<ArticuloTiendum> {

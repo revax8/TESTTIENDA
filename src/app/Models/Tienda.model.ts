@@ -9,7 +9,7 @@ export interface Tienda {
     id: number;
     idArticulo: number;
     idTienda: number;
-    fecha: Date;
+    fecha: string;
     //  idArticuloNavigation: Articulo;
     //  idTiendaNavigation: Tienda;
   }

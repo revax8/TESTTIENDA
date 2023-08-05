@@ -13,7 +13,7 @@ export class ArticuloListComponent implements OnInit{
   ngOnInit(): void {
     this.articuloService.getAll().subscribe({
       next: (articulos) =>{
-        console.log(articulos);
+        // console.log(articulos);
         this.articulos = articulos;
       },
       error: (error) => {

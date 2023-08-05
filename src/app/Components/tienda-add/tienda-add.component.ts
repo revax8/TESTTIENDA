@@ -22,7 +22,7 @@ constructor(private tiendasService : TiendasService, private router : Router) {
 addTienda():void{
   this.tiendasService.add(this.tiendaNueva).subscribe({
     next: (respone) => {
-      console.log(respone);
+      // console.log(respone);
       this.router.navigate(['tiendas-list']);
     }
   })

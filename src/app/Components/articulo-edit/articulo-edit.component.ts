@@ -41,7 +41,7 @@ export class ArticuloEditComponent implements OnInit{
   editArticulo(){
     this.articuloService.update(this.articuloEdit.id,this.articuloEdit).subscribe({
       next: (response) =>{
-        console.log(response);
+        // console.log(response);
         this.router.navigate(['articulos-list']);
       }
     })

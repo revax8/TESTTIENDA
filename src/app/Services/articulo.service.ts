@@ -14,8 +14,8 @@ export class ArticuloService {
   getAll(): Observable<Articulo[]>{
     return  this.http.get<Articulo[]>(this.url+ "Articulo/GetAll");
   }
-  add(nuevaTienda: Articulo):Observable<Articulo>{
-    return this.http.post<Articulo>(this.url+"Articulo/Add",nuevaTienda);
+  add(nuevaArticulo: Articulo):Observable<Articulo>{
+    return this.http.post<Articulo>(this.url+"Articulo/Add",nuevaArticulo);
   }
   getId(id: string): Observable<Articulo> {
     const parsedId = parseInt(id, 10);
@@ -25,7 +25,6 @@ export class ArticuloService {
     return this.http.put<Articulo>(this.url+'Articulo/Update?id='+id,tienda);
   }
   delete(id: number) : Observable<Boolean>{
-    console.log('id',id);
     return this.http.delete<boolean>(this.url+ 'Articulo/Delete?id='+id);
   }
 }
