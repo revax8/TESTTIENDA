@@ -1,20 +1,26 @@
 <div class="container my-5">   
-    <h1>Asignar Tiendas</h1>
+    <h1>Asignar Tienda al articulo : {{tiendas[0].descripcion}}</h1>
     <table class="table" *ngIf="tiendas && tiendas.length > 0">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Sucursal</th>
-            <th scope="col">Dirección</th>
+            <th scope="col">Articulo</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let tienda of tiendas">
-            <td>{{tienda.id}}</td>
+            <td>{{tienda.idArticulo}}</td>
             <td>{{tienda.sucursal}}</td>
-            <td>{{tienda.direccion}}</td>
-            <td><button (click)="asignaTienda(tienda.id)" class="btn btn-dark btn-sm">Asignar</button></td>
+            <td>{{tienda.descripcion}}</td>
+            <button
+                (click)="asignaTienda(tienda.idTienda)"
+                class="btn btn-dark btn-sm"
+                [disabled]="tienda.asignada"
+              >
+           {{ tienda.asignada ? 'Asignado' : 'Asignar' }}
+        </button>
           </tr>
         </tbody>
     </table>
