@@ -17,6 +17,7 @@ import { ClienteAddComponent } from './Components/cliente-add/cliente-add.compon
 import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
 import { ClienteListComponent } from './Components/cliente-list/cliente-list.component';
 import { ClienteArticuloComponent } from './Components/cliente-articulo/cliente-articulo.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ClienteArticuloComponent } from './Components/cliente-articulo/cliente-
     ClienteAddComponent,
     ClienteEditComponent,
     ClienteListComponent,
-    ClienteArticuloComponent
+    ClienteArticuloComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

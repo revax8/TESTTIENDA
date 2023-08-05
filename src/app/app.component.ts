@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestTienda';
+  userIsLoggedIn = false;
+
+  handleLoginSuccess() {
+    this.userIsLoggedIn = true;
+  }
 }

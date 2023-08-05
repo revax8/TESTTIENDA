@@ -12,9 +12,17 @@ import { ClienteAddComponent } from './Components/cliente-add/cliente-add.compon
 import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
 import { ClienteListComponent } from './Components/cliente-list/cliente-list.component';
 import { ClienteArticuloComponent } from './Components/cliente-articulo/cliente-articulo.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
+  { 
+    path: 'login', component: LoginComponent 
+  },
+  // { 
+  //   path: '', redirectTo: '/login', pathMatch: 'full' 
+  // },
   {
     path: 'tiendas-list',
     component: TiendasListComponent
@@ -22,6 +30,10 @@ const routes: Routes = [
   {
     path: 'tienda-add',
     component: TiendaAddComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'tienda-edit/:id'
@@ -59,9 +71,12 @@ const routes: Routes = [
     path: 'cliente-articulo/:id'
     ,component: ClienteArticuloComponent
   },
+
+
+  
   {
     path:'**',
-    component: HomeComponent
+    component: LoginComponent
   }
 ];
 
