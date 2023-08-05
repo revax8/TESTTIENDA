@@ -16,6 +16,7 @@ import { ArticuloTiendaComponent } from './Components/articulo-tienda/articulo-t
 import { ClienteAddComponent } from './Components/cliente-add/cliente-add.component';
 import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
 import { ClienteListComponent } from './Components/cliente-list/cliente-list.component';
+import { ClienteArticuloComponent } from './Components/cliente-articulo/cliente-articulo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ClienteListComponent } from './Components/cliente-list/cliente-list.com
     ArticuloTiendaComponent,
     ClienteAddComponent,
     ClienteEditComponent,
-    ClienteListComponent
+    ClienteListComponent,
+    ClienteArticuloComponent
   ],
   imports: [
     BrowserModule,
