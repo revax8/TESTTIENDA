@@ -29,9 +29,9 @@ export interface Tienda {
   export interface ClienteArticulo {
     idCliente: number;
     idArticulo: number;
-    fecha: number;
-    idArticuloNavigation: Articulo;
-    idClienteNavigation: Cliente;
+    fecha: string;
+    // idArticuloNavigation: Articulo;
+    // idClienteNavigation: Cliente;
   }
   export interface Cliente {
     id: number;
@@ -52,8 +52,9 @@ export interface Tienda {
 
   export interface ClienteXArticulo {
     idArticulo: number;
-    nombre: string;
-    apellidos: string;
+    articulo: string;
+    cliente: string;
     idCliente: number;
     asignada: boolean;
+    IdTienda: number;
   }

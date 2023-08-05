@@ -1,1 +1,32 @@
-<p>cliente-articulo works!</p>
+<div class="container my-5">   
+    <h1>Carrito compras del Cliente: {{ clientes.length > 0 ? clientes[0].cliente : '' }}</h1>
+
+    <select (change)="seleccionarSucursal($event)" class="form-select mb-3" aria-label="Seleccionar Sucursal">
+        <option value="">Seleccionar Tienda</option>
+        <option *ngFor="let tienda of tiendas" [value]="tienda.id">{{ tienda.sucursal }}</option>
+    </select>
+    <table class="table" *ngIf="clientes && clientes.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Articulo</th>            
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{cliente.idArticulo}}</td>
+            <td>{{cliente.articulo}}</td>
+            <button
+                (click)="asignaArticulo(cliente.idArticulo)"
+                class="btn btn-dark btn-sm"
+                [disabled]="cliente.asignada"
+              >
+           {{ cliente.asignada ? '+Agregado al arrito' : '+Agregar al carrito' }}
+        </button>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<p *ngIf="!clientes || clientes.length <= 0">Tienda no contiene articulos asignados, intente con otra</p>

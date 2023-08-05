@@ -17,6 +17,6 @@ export class ClienteArticuloService {
 
   getTiendaXArticulo(idCliente: number, idTienda: number): Observable<ClienteXArticulo[]> {
     console.log('ID',idCliente)
-    return this.http.get<ClienteXArticulo[]>(this.url + 'ClienteArticulo/GetTiendaXArticulo?idCliente=' + idCliente+'?idCliente='+idTienda);
+    return this.http.get<ClienteXArticulo[]>(this.url + 'ClienteArticulo/GetTiendaXArticulo?idCliente=' + idCliente+'&idTienda='+idTienda);
   }
 }
