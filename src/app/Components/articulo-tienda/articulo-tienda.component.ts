@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { ArticuloTiendum, Tienda } from 'src/app/Models/Tienda.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArticuloTiendum, Tienda, TiendaXArticulo } from 'src/app/Models/Tienda.model';
 import { ArticuloTiendaService } from 'src/app/Services/articulo-tienda.service';
 import { TiendasService } from 'src/app/Services/tiendas.service';
 import { DatePipe, formatDate } from '@angular/common';
@@ -11,7 +11,8 @@ import { DatePipe, formatDate } from '@angular/common';
   styleUrls: ['./articulo-tienda.component.css']
 })
 export class ArticuloTiendaComponent  implements OnInit{  
-  tiendas : Tienda[] = [];
+  
+   tiendas : TiendaXArticulo [] = [];
   idArticulo = 0;
   articuloTienda : ArticuloTiendum = {
     id: 0,
@@ -20,50 +21,42 @@ export class ArticuloTiendaComponent  implements OnInit{
     fecha: ""    
   };
 
-  constructor(private tiendaService : TiendasService
-             ,private articuloTiendaService : ArticuloTiendaService
-             ,private activatedRoute : ActivatedRoute) {}
+  constructor(private articuloTiendaService : ArticuloTiendaService
+             ,private activatedRoute : ActivatedRoute
+             ,private router : Router) {}
 
   ngOnInit(): void {
-    this.tiendaService.getAll().subscribe({
-      next: (tiendas) =>{
-        // console.log(tiendas);
-        this.tiendas = tiendas;
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    })
-
     this.activatedRoute.paramMap.subscribe({
       next: (res) => {
         const idParam = res.get('id');
         this.idArticulo = idParam ? parseInt(idParam, 10) : 0;
       }
     });
+    this.carga();
+  }
+
+  carga(){
+    this.articuloTiendaService.getTiendaXArticulo(this.idArticulo).subscribe({
+      next: (articulosTiendas) =>{
+        // console.log(tiendas);
+        this.tiendas = articulosTiendas;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 
    asignaTienda(idTienda : number):void {
     const fecha = formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
-  //  let articuloTienda2 : ArticuloTiendum = {
-  //      id: idTienda,
-  //     idArticulo:  this.idArticulo,
-  //     idTienda: idTienda,
-  //     fecha:  formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
-  //   };
-
-
     this.articuloTienda.idTienda = idTienda;
-    this.articuloTienda.idArticulo = this.idArticulo;
-    
+    this.articuloTienda.idArticulo = this.idArticulo;    
     this.articuloTienda.fecha =  fecha;
-   
-  
-    
-
+         
      this.articuloTiendaService.add(this.articuloTienda).subscribe({
       next: (res) => {
         console.log(res);
+        this.carga();
       }
      })
    }
