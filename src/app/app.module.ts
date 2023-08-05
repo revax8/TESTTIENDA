@@ -13,6 +13,9 @@ import { ArticuloListComponent } from './Components/articulo-list/articulo-list.
 import { ArticuloAddComponent } from './Components/articulo-add/articulo-add.component';
 import { ArticuloEditComponent } from './Components/articulo-edit/articulo-edit.component';
 import { ArticuloTiendaComponent } from './Components/articulo-tienda/articulo-tienda.component';
+import { ClienteAddComponent } from './Components/cliente-add/cliente-add.component';
+import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
+import { ClienteListComponent } from './Components/cliente-list/cliente-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ArticuloTiendaComponent } from './Components/articulo-tienda/articulo-t
     ArticuloListComponent,
     ArticuloAddComponent,
     ArticuloEditComponent,
-    ArticuloTiendaComponent
+    ArticuloTiendaComponent,
+    ClienteAddComponent,
+    ClienteEditComponent,
+    ClienteListComponent
   ],
   imports: [
     BrowserModule,

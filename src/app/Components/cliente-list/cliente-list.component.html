@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <div class=""><button class="btn btn-dark btn-sm" > <a class="nav-link" routerLink="/cliente-add">+cliente</a></button></div>
+    <h1>Clientes</h1>
+    <table class="table" *ngIf="clientes && clientes.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Direccion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.apellidos}}</td>
+            <td>{{cliente.direccion}}</td>
+            <td><button [routerLink]="['/cliente-edit',cliente.id]" class="btn btn-dark btn-sm">Editar</button></td>
+            <!-- <td><button [routerLink]="['/cliente-articulo',cliente.id]" class="btn btn-dark btn-sm">+Articulo</button></td> -->
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<p *ngIf="!clientes || clientes.length <= 0"> No hay Clientes</p>

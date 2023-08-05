@@ -49,3 +49,11 @@ export interface Tienda {
     idTienda: number;
     asignada: boolean;
   }
+
+  export interface ClienteXArticulo {
+    idArticulo: number;
+    nombre: string;
+    apellidos: string;
+    idCliente: number;
+    asignada: boolean;
+  }

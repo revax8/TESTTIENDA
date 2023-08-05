@@ -8,6 +8,9 @@ import { ArticuloListComponent } from './Components/articulo-list/articulo-list.
 import { ArticuloEditComponent } from './Components/articulo-edit/articulo-edit.component';
 import { ArticuloAddComponent } from './Components/articulo-add/articulo-add.component';
 import { ArticuloTiendaComponent } from './Components/articulo-tienda/articulo-tienda.component';
+import { ClienteAddComponent } from './Components/cliente-add/cliente-add.component';
+import { ClienteEditComponent } from './Components/cliente-edit/cliente-edit.component';
+import { ClienteListComponent } from './Components/cliente-list/cliente-list.component';
 
 
 const routes: Routes = [
@@ -38,6 +41,18 @@ const routes: Routes = [
   {
     path: 'articulo-tienda/:id'
     ,component: ArticuloTiendaComponent
+  },
+  {
+    path: 'cliente-add',
+    component: ClienteAddComponent
+  },
+  {
+    path: 'cliente-edit/:id'
+    ,component: ClienteEditComponent
+  },
+  {
+    path: 'clientes-list',
+    component: ClienteListComponent
   },
   {
     path:'**',
