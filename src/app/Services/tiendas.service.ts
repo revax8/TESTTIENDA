@@ -7,7 +7,7 @@ import { Tienda } from '../Models/Tienda.model';
   providedIn: 'root'
 })
 export class TiendasService {
- url = "https://localhost:7014/api/";
+  url = "http://revax.somee.com/api/";
 
  constructor(private http : HttpClient) { }
 
