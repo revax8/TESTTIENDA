@@ -1,0 +1,6 @@
+{
+    "/api": {
+    "target": "https://revax.somee.com/api/",
+    "secure": false
+    }
+    }

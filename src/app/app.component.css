@@ -1,0 +1,9 @@
+.navbar-toggler {
+    border: none; /* Elimina el borde del botón */
+    background-color: transparent; /* Fondo transparente */
+}
+
+/* Estilos para mostrar el menú desplegado */
+.navbar-collapse.show {
+    display: block !important; /* Forzar la visualización */
+}

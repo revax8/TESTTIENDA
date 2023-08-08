@@ -7,7 +7,7 @@ import { ClienteArticulo, ClienteXArticulo } from '../Models/Tienda.model';
   providedIn: 'root'
 })
 export class ClienteArticuloService {
-  url = "http://revax.somee.com/api/";
+  url = "https://revax.somee.com/api/";
 
   constructor(private http : HttpClient) { }
 

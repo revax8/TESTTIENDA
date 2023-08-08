@@ -10,7 +10,7 @@ export class ClienteService {
 
  
   
-  url = "http://revax.somee.com/api/";
+  url = "https://revax.somee.com/api/";
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Cliente[]>{

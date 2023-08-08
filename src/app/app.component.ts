@@ -12,4 +12,9 @@ export class AppComponent {
   handleLoginSuccess() {
     this.userIsLoggedIn = true;
   }
+  isMenuOpen = false;
+
+  toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+  }
 }

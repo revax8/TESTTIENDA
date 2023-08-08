@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ArticuloTiendaService {
 
-  url = "http://revax.somee.com/api/";
+  url = "https://revax.somee.com/api/";
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<ArticuloTiendum[]>{
